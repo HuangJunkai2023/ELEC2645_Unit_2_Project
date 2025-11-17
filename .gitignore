@@ -1,0 +1,48 @@
+# Compiled output
+*.out
+*.exe
+*.o
+*.obj
+*.elf
+
+# Executable files
+main.out
+main.exe
+output/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# IDE and editor files
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build directories
+build/
+bin/
+debug/
+release/
+
+# Dependency files
+*.d
+
+# Core dumps
+core
+*.core
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini

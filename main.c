@@ -37,7 +37,7 @@ static void main_menu(void)
 
 static int get_user_input(void)
 {
-    enum { MENU_ITEMS = 5 };   /* 1..4 = items, 5 = Exit */
+    enum { MENU_ITEMS = 6 };   /* 1..5 = items, 6 = Exit */
     char buf[128];
     int valid_input = 0;
     int value = 0;
@@ -89,6 +89,10 @@ static void select_menu_item(int input)
             menu_item_4();
             go_back_to_main();
             break;
+        case 5:
+            menu_item_5();
+            go_back_to_main();
+            break;
         default:
             printf("Bye!\n");
             exit(0);
@@ -97,16 +101,16 @@ static void select_menu_item(int input)
 
 static void print_main_menu(void)
 {
-    printf("\n----------- Main menu -----------\n");
+    printf("\n========== Electronic and Electrical Engineering Tools ==========\n");
     printf("\n"
-           "\t\t\t\t\t\t\n"
-           "\t1. Menu item 1\t\t\n"
-           "\t2. Menu item 2\t\t\n"
-           "\t3. Menu item 3\t\t\n"
-           "\t4. Menu item 4\t\t\n"
-           "\t5. Exit\t\t\t\t\n"
-           "\t\t\t\t\t\t\n");
-    printf("---------------------------------------------\n");
+           "\t1. Resistor Colour Code Decoder\t\t\n"
+           "\t2. RC Circuit Simulator\t\t\t\n"
+           "\t3. Basic Circuit Analyser\t\t\t\n"
+           "\t4. Signal Generator\t\t\t\t\n"
+           "\t5. Chat with DeepSeek\t\t\t\t\n"
+           "\t6. Exit\t\t\t\t\t\t\n"
+           "\n");
+    printf("=================================================================\n");
 }
 
 static void go_back_to_main(void)
