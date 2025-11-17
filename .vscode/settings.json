@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\44282\\OneDrive\\study\\ELEC2645_Unit_2_Project",
+            "binaryPath": "c:\\Users\\44282\\OneDrive\\study\\ELEC2645_Unit_2_Project\\main.out",
+            "binaryArgs": []
+        }
+    ]
+}
