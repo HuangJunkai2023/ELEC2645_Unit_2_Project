@@ -4,11 +4,25 @@
 # 
 # Note to students: You dont need to fully understand this! 
 
-main.out:
-	gcc main.c funcs.c -o main.out -lm
+# Source files - all modules are now compiled together
+SOURCES = main.c resistor.c rc_circuit.c circuit_analyzer.c signal_generator.c ai_chat.c helpers.c
+
+# Detect OS and set executable name
+ifeq ($(OS),Windows_NT)
+    EXECUTABLE = main.exe
+    RM = del /Q
+else
+    EXECUTABLE = main.out
+    RM = rm -f
+endif
+
+main.out: $(EXECUTABLE)
+
+$(EXECUTABLE):
+	gcc $(SOURCES) -o $(EXECUTABLE) -lm -Wall -Wextra
 
 clean:
-	-rm main.out
+	-$(RM) main.exe main.out 2>nul
 
-test: clean main.out
+test: clean $(EXECUTABLE)
 	bash test.sh
