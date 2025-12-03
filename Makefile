@@ -11,9 +11,11 @@ SOURCES = main.c resistor.c rc_circuit.c circuit_analyzer.c signal_generator.c a
 ifeq ($(OS),Windows_NT)
     EXECUTABLE = main.exe
     RM = del /Q
+    NULL_DEVICE = nul
 else
     EXECUTABLE = main.out
     RM = rm -f
+    NULL_DEVICE = /dev/null
 endif
 
 main.out: $(EXECUTABLE)
@@ -22,7 +24,7 @@ $(EXECUTABLE):
 	gcc $(SOURCES) -o $(EXECUTABLE) -lm -Wall -Wextra
 
 clean:
-	-$(RM) main.exe main.out 2>nul
+	-$(RM) main.exe main.out 2>$(NULL_DEVICE)
 
 test: clean $(EXECUTABLE)
 	bash test.sh

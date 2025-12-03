@@ -91,7 +91,8 @@ static void select_menu_item(int input)
             break;
         case 5:
             menu_item_5();
-            go_back_to_main();
+            // AI chat has its own exit mechanism (b/B/exit/quit)
+            // No need to call go_back_to_main() again
             break;
         default:
             printf("Bye!\n");
